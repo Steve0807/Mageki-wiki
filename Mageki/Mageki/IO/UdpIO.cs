@@ -32,12 +32,13 @@ namespace Mageki
             set
             {
                 iP = value;
-                RemoteEP.Address = value;
+                if(RemoteEP != null) RemoteEP.Address = value;
+
             }
         }
         public int Port { get; private set; }
 
-        public UdpIO() : this(Settings.IP, Settings.Port)
+        public UdpIO() : this(Settings.IPAddress, Settings.Port)
         {
 
         }
